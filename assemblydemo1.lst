@@ -1,0 +1,45 @@
+AARCH64 GAS  assemblydemo1.s 			page 1
+
+
+   1              		.arch armv8-a
+   2              		.file	"assemblydemo1.c"
+   3              		.text
+   4              		.align	2
+   5              		.global	main
+   6              		.type	main, %function
+   7              	main:
+   8              	.LFB0:
+   9              		.cfi_startproc
+  10 0000 FF4300D1 		sub	sp, sp, #16
+  11              		.cfi_def_cfa_offset 16
+  12 0004 20008052 		mov	w0, 1
+  13 0008 E00F00B9 		str	w0, [sp, 12]
+  14 000c 40008052 		mov	w0, 2
+  15 0010 E00B00B9 		str	w0, [sp, 8]
+  16 0014 60008052 		mov	w0, 3
+  17 0018 E00700B9 		str	w0, [sp, 4]
+  18 001c E10F40B9 		ldr	w1, [sp, 12]
+  19 0020 E00B40B9 		ldr	w0, [sp, 8]
+  20 0024 207C001B 		mul	w0, w1, w0
+  21 0028 E10740B9 		ldr	w1, [sp, 4]
+  22 002c 2000000B 		add	w0, w1, w0
+  23 0030 E00300B9 		str	w0, [sp]
+  24 0034 00008052 		mov	w0, 0
+  25 0038 FF430091 		add	sp, sp, 16
+  26              		.cfi_def_cfa_offset 0
+  27 003c C0035FD6 		ret
+  28              		.cfi_endproc
+  29              	.LFE0:
+  30              		.size	main, .-main
+  31              		.ident	"GCC: (Debian 10.2.1-6) 10.2.1 20210110"
+  32              		.section	.note.GNU-stack,"",@progbits
+AARCH64 GAS  assemblydemo1.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 assemblydemo1.c
+     assemblydemo1.s:4      .text:0000000000000000 $x
+     assemblydemo1.s:7      .text:0000000000000000 main
+                        .eh_frame:0000000000000014 $d
+
+NO UNDEFINED SYMBOLS

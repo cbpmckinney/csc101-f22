@@ -1,0 +1,49 @@
+One Disk: 1 move
+Move(1,A,C)
+
+Two Disks: 3 moves
+Move(2,A,B)
+Move(1,A,C)
+Move(2,B,C)
+
+Three Disks: 7 moves
+Move(3,A,C)
+Move(2,A,B)
+Move(3,C,B)
+
+Move(1,A,C)
+
+Move(3,B,A)
+Move(2,B,C)
+Move(3,A,C)
+
+Four Disks: 15 moves = 2^4 -1 = 2*(number for one fewer disk) + 1 
+Move(4,A,B)
+Move(3,A,C)
+Move(4,B,C)
+Move(2,A,B)
+Move(4,C,A)
+Move(3,C,B)
+Move(4,A,B)
+
+Move(1,A,C)
+
+Move(4,B,C)
+Move(3,B,A)
+Move(4,C,A)
+Move(2,B,C)
+Move(4,A,B)
+Move(3,A,C)
+Move(4,B,C)
+
+def Hanoi(numdisks, startpeg, endpeg, temppeg):
+    if(numdisks == 1):
+        Move(1,startpeg,endpeg)
+    else:
+        
+        Hanoi()
+        
+
+
+
+
